@@ -6,9 +6,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Layout } from "@/components/layout/Layout";
-import { SectionHeading } from "@/components/SectionHeading";
 import { LeadForm } from "@/components/LeadForm";
 import { BookOpen, Building2 } from "lucide-react";
+import faqHero from "@/assets/faq-hero.jpg";
 
 const learningFAQs = [
   {
@@ -75,9 +75,16 @@ const agencyFAQs = [
 export default function FAQs() {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-light">
-        <div className="absolute inset-0 bg-hero-pattern opacity-50" />
+      {/* Hero Section with Image */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src={faqHero} 
+            alt="FAQs" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background" />
+        </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
