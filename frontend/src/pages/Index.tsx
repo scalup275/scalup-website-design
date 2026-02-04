@@ -388,6 +388,91 @@ export default function Index() {
           </div>
         </div>
       </section>
+      {/* Skills & Tools Section */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* Skills */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
+                <TrendingUp className="h-7 w-7 text-primary" />
+                Skills to Master
+              </h3>
+
+              <div className="flex flex-wrap gap-3">
+                {[
+                  "SEO",
+                  "SEM",
+                  "SERPs",
+                  "On-page Optimization",
+                  "Real-time Analytics",
+                  "Web Analytics",
+                  "Content Marketing",
+                  "Email Marketing",
+                  "Social Media Marketing",
+                  "Facebook & Instagram Ads",
+                  "Video Marketing",
+                  "Marketing Analytics",
+                  "Google Analytics",
+                  "Product Positioning",
+                  "Pricing Strategy",
+                ].map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-4 py-2 bg-card rounded-full text-sm border border-border/50 hover:border-primary/30 hover:bg-accent transition"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Tools */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
+                <Zap className="h-7 w-7 text-primary" />
+                Tools to Master
+              </h3>
+
+              <div className="flex flex-wrap gap-3">
+                {[
+                  "Google Ads",
+                  "Meta Ads Manager",
+                  "ChatGPT",
+                  "Canva",
+                  "Semrush",
+                  "Ahrefs",
+                  "Mailchimp",
+                  "HubSpot",
+                  "LinkedIn Ads",
+                  "YouTube Ads",
+                  "Google Analytics",
+                  "Google Tag Manager",
+                  "Hootsuite",
+                  "Notion",
+                ].map((tool) => (
+                  <span
+                    key={tool}
+                    className="px-4 py-2 bg-primary/10 rounded-full text-sm text-primary font-medium hover:bg-primary hover:text-primary-foreground transition"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       {/* Testimonials */}
       {/* Testimonials */}
@@ -527,8 +612,9 @@ export default function Index() {
             >
               <LeadForm
                 title="Book Your Free Consultation"
-                description="Get personalized career guidance from our experts"
+                description="Get personalized career guidance"
                 buttonText="Get Started"
+                source="consultation"
               />
             </motion.div>
           </div>

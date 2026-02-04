@@ -115,23 +115,61 @@ const modules = [
 ];
 
 const skills = [
-  "SEO", "SEM", "SERPs", "On-page Optimization", "Real-time Analytics",
-  "Web Analytics", "Content Marketing", "Email Marketing", "Social Media Marketing",
-  "Facebook & Instagram Ads", "Video Marketing", "Marketing Analytics",
-  "Google Analytics", "Product Positioning", "Pricing Strategy",
+  "SEO",
+  "SEM",
+  "SERPs",
+  "On-page Optimization",
+  "Real-time Analytics",
+  "Web Analytics",
+  "Content Marketing",
+  "Email Marketing",
+  "Social Media Marketing",
+  "Facebook & Instagram Ads",
+  "Video Marketing",
+  "Marketing Analytics",
+  "Google Analytics",
+  "Product Positioning",
+  "Pricing Strategy",
 ];
 
 const tools = [
-  "Google Ads", "Meta Ads Manager", "ChatGPT", "Canva", "Semrush",
-  "Ahrefs", "Mailchimp", "HubSpot", "LinkedIn Ads", "YouTube Ads",
-  "Google Analytics", "Google Tag Manager", "Hootsuite", "Notion",
+  "Google Ads",
+  "Meta Ads Manager",
+  "ChatGPT",
+  "Canva",
+  "Semrush",
+  "Ahrefs",
+  "Mailchimp",
+  "HubSpot",
+  "LinkedIn Ads",
+  "YouTube Ads",
+  "Google Analytics",
+  "Google Tag Manager",
+  "Hootsuite",
+  "Notion",
 ];
 
 const careerServices = [
-  { icon: Users, title: "Career Sessions", description: "5+ career-oriented sessions by industry mentors" },
-  { icon: Award, title: "Profile Building", description: "Craft a standout resume and LinkedIn profile" },
-  { icon: Megaphone, title: "Mock Interviews", description: "Prepare with most asked interview questions" },
-  { icon: Lightbulb, title: "1:1 Mentoring", description: "Get guidance at every step of your transition" },
+  {
+    icon: Users,
+    title: "Career Sessions",
+    description: "5+ career-oriented sessions by industry mentors",
+  },
+  {
+    icon: Award,
+    title: "Profile Building",
+    description: "Craft a standout resume and LinkedIn profile",
+  },
+  {
+    icon: Megaphone,
+    title: "Mock Interviews",
+    description: "Prepare with most asked interview questions",
+  },
+  {
+    icon: Lightbulb,
+    title: "1:1 Mentoring",
+    description: "Get guidance at every step of your transition",
+  },
 ];
 
 export default function Learning() {
@@ -140,9 +178,9 @@ export default function Learning() {
       {/* Hero Section with Background Image */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src={learningHero} 
-            alt="Digital Marketing Learning" 
+          <img
+            src={learningHero}
+            alt="Digital Marketing Learning"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/70" />
@@ -159,11 +197,12 @@ export default function Learning() {
                 🎓 Executive Post Graduate Certification
               </span>
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-                AI-Driven <span className="text-primary">Digital Marketing</span> Bootcamp
+                AI-Driven{" "}
+                <span className="text-primary">Digital Marketing</span> Bootcamp
               </h1>
               <p className="text-lg text-muted-foreground mb-6">
-                Gain the most relevant skills in digital marketing and make a successful 
-                career transition with guaranteed paid internships.
+                Gain the most relevant skills in digital marketing and make a
+                successful career transition with guaranteed paid internships.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-8">
@@ -233,8 +272,12 @@ export default function Learning() {
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 className="text-center py-4"
               >
-                <p className="text-2xl md:text-3xl font-bold text-primary mb-1">{item.value}</p>
-                <p className="text-xs md:text-sm text-secondary-foreground/70">{item.label}</p>
+                <p className="text-2xl md:text-3xl font-bold text-primary mb-1">
+                  {item.value}
+                </p>
+                <p className="text-xs md:text-sm text-secondary-foreground/70">
+                  {item.label}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -272,8 +315,12 @@ export default function Learning() {
                         <module.icon className="h-7 w-7 text-primary" />
                       </div>
                       <div>
-                        <span className="text-sm font-medium text-primary">{module.week}</span>
-                        <h3 className="text-lg font-bold text-foreground">{module.title}</h3>
+                        <span className="text-sm font-medium text-primary">
+                          {module.week}
+                        </span>
+                        <h3 className="text-lg font-bold text-foreground">
+                          {module.title}
+                        </h3>
                       </div>
                     </div>
 
@@ -281,7 +328,10 @@ export default function Learning() {
                     <div className="md:col-span-2">
                       <ul className="space-y-2">
                         {module.topics.map((topic) => (
-                          <li key={topic} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <li
+                            key={topic}
+                            className="flex items-start gap-2 text-sm text-muted-foreground"
+                          >
                             <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                             <span>{topic}</span>
                           </li>
@@ -291,8 +341,12 @@ export default function Learning() {
 
                     {/* Outcome */}
                     <div className="bg-accent/50 rounded-lg p-4">
-                      <p className="text-xs text-primary font-medium mb-1">🎯 Outcome</p>
-                      <p className="text-sm text-foreground">{module.outcome}</p>
+                      <p className="text-xs text-primary font-medium mb-1">
+                        🎯 Outcome
+                      </p>
+                      <p className="text-sm text-foreground">
+                        {module.outcome}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -312,9 +366,9 @@ export default function Learning() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <img 
-                src={successStudents} 
-                alt="SCALUP Graduates" 
+              <img
+                src={successStudents}
+                alt="SCALUP Graduates"
                 className="rounded-2xl shadow-2xl w-full"
               />
             </motion.div>
@@ -329,21 +383,26 @@ export default function Learning() {
                 Success Stories
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Join 1000+ <span className="text-primary">Successful</span> Graduates
+                Join 1000+ <span className="text-primary">Successful</span>{" "}
+                Graduates
               </h2>
               <p className="text-muted-foreground mb-6">
-                Our alumni are working at top companies and running successful businesses. 
-                With an average salary hike of 55% and 100% placement assistance, 
-                your success story starts here.
+                Our alumni are working at top companies and running successful
+                businesses. With an average salary hike of 55% and 100%
+                placement assistance, your success story starts here.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-card rounded-xl p-4 border border-border/50">
                   <p className="text-3xl font-bold text-primary">55%</p>
-                  <p className="text-sm text-muted-foreground">Avg. Salary Hike</p>
+                  <p className="text-sm text-muted-foreground">
+                    Avg. Salary Hike
+                  </p>
                 </div>
                 <div className="bg-card rounded-xl p-4 border border-border/50">
                   <p className="text-3xl font-bold text-primary">400+</p>
-                  <p className="text-sm text-muted-foreground">Hiring Partners</p>
+                  <p className="text-sm text-muted-foreground">
+                    Hiring Partners
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -430,8 +489,12 @@ export default function Learning() {
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <service.icon className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{service.title}</h3>
-                <p className="text-sm text-muted-foreground">{service.description}</p>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {service.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -485,11 +548,13 @@ export default function Learning() {
               transition={{ duration: 0.5 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground mb-6">
-                Start Your <span className="text-primary">Transformation</span> Today
+                Start Your <span className="text-primary">Transformation</span>{" "}
+                Today
               </h2>
               <p className="text-secondary-foreground/80 text-lg mb-8">
-                Join the next batch and become a certified digital marketing professional
-                with hands-on experience and guaranteed placement assistance.
+                Join the next batch and become a certified digital marketing
+                professional with hands-on experience and guaranteed placement
+                assistance.
               </p>
               <Button variant="hero" size="lg">
                 <Download className="mr-2 h-5 w-5" /> Download Full Curriculum

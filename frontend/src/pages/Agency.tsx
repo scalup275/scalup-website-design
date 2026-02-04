@@ -25,38 +25,74 @@ const services = [
   {
     icon: Search,
     title: "Search Engine Optimization",
-    description: "Boost your organic visibility with keyword optimization, on-page SEO, technical SEO, and link building strategies.",
-    features: ["Keyword Research", "On-page SEO", "Technical Audits", "Link Building"],
+    description:
+      "Boost your organic visibility with keyword optimization, on-page SEO, technical SEO, and link building strategies.",
+    features: [
+      "Keyword Research",
+      "On-page SEO",
+      "Technical Audits",
+      "Link Building",
+    ],
   },
   {
     icon: Target,
     title: "Meta Ads (Facebook & Instagram)",
-    description: "Drive targeted traffic and conversions with strategic ad campaigns on Meta platforms.",
-    features: ["Campaign Strategy", "Audience Targeting", "Creative Design", "Performance Optimization"],
+    description:
+      "Drive targeted traffic and conversions with strategic ad campaigns on Meta platforms.",
+    features: [
+      "Campaign Strategy",
+      "Audience Targeting",
+      "Creative Design",
+      "Performance Optimization",
+    ],
   },
   {
     icon: TrendingUp,
     title: "Google Ads Management",
-    description: "Maximize your ROI with expertly managed search, display, and YouTube ad campaigns.",
-    features: ["Search Campaigns", "Display Ads", "YouTube Ads", "Conversion Tracking"],
+    description:
+      "Maximize your ROI with expertly managed search, display, and YouTube ad campaigns.",
+    features: [
+      "Search Campaigns",
+      "Display Ads",
+      "YouTube Ads",
+      "Conversion Tracking",
+    ],
   },
   {
     icon: PenTool,
     title: "Content Marketing",
-    description: "Engage your audience with compelling content that drives traffic and builds authority.",
-    features: ["Blog Writing", "Social Media Content", "Video Scripts", "Email Campaigns"],
+    description:
+      "Engage your audience with compelling content that drives traffic and builds authority.",
+    features: [
+      "Blog Writing",
+      "Social Media Content",
+      "Video Scripts",
+      "Email Campaigns",
+    ],
   },
   {
     icon: Megaphone,
     title: "Social Media Marketing",
-    description: "Build your brand presence and engage with your audience across all social platforms.",
-    features: ["Strategy Development", "Content Creation", "Community Management", "Influencer Outreach"],
+    description:
+      "Build your brand presence and engage with your audience across all social platforms.",
+    features: [
+      "Strategy Development",
+      "Content Creation",
+      "Community Management",
+      "Influencer Outreach",
+    ],
   },
   {
     icon: BarChart,
     title: "Analytics & Reporting",
-    description: "Make data-driven decisions with comprehensive analytics and performance reports.",
-    features: ["Google Analytics Setup", "Custom Dashboards", "Monthly Reports", "ROI Analysis"],
+    description:
+      "Make data-driven decisions with comprehensive analytics and performance reports.",
+    features: [
+      "Google Analytics Setup",
+      "Custom Dashboards",
+      "Monthly Reports",
+      "ROI Analysis",
+    ],
   },
 ];
 
@@ -64,23 +100,32 @@ const process = [
   {
     step: "01",
     title: "Strategy",
-    description: "We analyze your business, competitors, and market to develop a winning digital strategy.",
+    description:
+      "We analyze your business, competitors, and market to develop a winning digital strategy.",
   },
   {
     step: "02",
     title: "Execution",
-    description: "Our team implements campaigns with precision, creativity, and attention to detail.",
+    description:
+      "Our team implements campaigns with precision, creativity, and attention to detail.",
   },
   {
     step: "03",
     title: "Growth",
-    description: "We continuously optimize and scale your campaigns for maximum ROI and sustainable growth.",
+    description:
+      "We continuously optimize and scale your campaigns for maximum ROI and sustainable growth.",
   },
 ];
 
 const clients = [
-  "Tech Startups", "E-commerce Brands", "Healthcare", "Education",
-  "Real Estate", "Hospitality", "Finance", "Retail"
+  "Tech Startups",
+  "E-commerce Brands",
+  "Healthcare",
+  "Education",
+  "Real Estate",
+  "Hospitality",
+  "Finance",
+  "Retail",
 ];
 
 export default function Agency() {
@@ -89,9 +134,9 @@ export default function Agency() {
       {/* Hero Section with Image */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src={agencyHero} 
-            alt="SCALUP Agency" 
+          <img
+            src={agencyHero}
+            alt="SCALUP Agency"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/70" />
@@ -112,20 +157,19 @@ export default function Agency() {
               <span className="text-primary">Data-Driven</span> Marketing
             </h1>
             <p className="text-lg text-muted-foreground mb-8">
-              We help businesses grow with strategic digital marketing solutions. 
-              From SEO to paid ads, we've got you covered.
+              We help businesses grow with strategic digital marketing
+              solutions. From SEO to paid ads, we've got you covered.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <Button variant="hero" size="xl" asChild>
                 <Link to="/contact">
-                  Get a Free Consultation <ArrowRight className="ml-2 h-5 w-5" />
+                  Get a Free Consultation{" "}
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
               <Button variant="hero-outline" size="xl" asChild>
-                <Link to="/about">
-                  Learn About Us
-                </Link>
+                <Link to="/about">Learn About Us</Link>
               </Button>
             </div>
           </motion.div>
@@ -139,7 +183,8 @@ export default function Agency() {
             badge="Our Services"
             title={
               <>
-                Digital Marketing <span className="text-primary">Solutions</span>
+                Digital Marketing{" "}
+                <span className="text-primary">Solutions</span>
               </>
             }
             description="Comprehensive services to fuel your business growth"
@@ -158,11 +203,18 @@ export default function Agency() {
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                   <service.icon className="h-7 w-7 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">{service.title}</h3>
-                <p className="text-muted-foreground mb-4">{service.description}</p>
+                <h3 className="text-xl font-semibold text-foreground mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  {service.description}
+                </p>
                 <ul className="space-y-2">
                   {service.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <li
+                      key={feature}
+                      className="flex items-center gap-2 text-sm text-muted-foreground"
+                    >
                       <CheckCircle className="h-4 w-4 text-primary" />
                       {feature}
                     </li>
@@ -202,11 +254,17 @@ export default function Agency() {
                     className="flex gap-4"
                   >
                     <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                      <span className="text-2xl font-bold text-primary">{item.step}</span>
+                      <span className="text-2xl font-bold text-primary">
+                        {item.step}
+                      </span>
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-foreground mb-2">{item.title}</h3>
-                      <p className="text-muted-foreground">{item.description}</p>
+                      <h3 className="text-xl font-bold text-foreground mb-2">
+                        {item.title}
+                      </h3>
+                      <p className="text-muted-foreground">
+                        {item.description}
+                      </p>
                     </div>
                   </motion.div>
                 ))}
@@ -219,9 +277,9 @@ export default function Agency() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <img 
-                src={marketingTools} 
-                alt="Digital Marketing Tools" 
+              <img
+                src={marketingTools}
+                alt="Digital Marketing Tools"
                 className="rounded-2xl shadow-2xl w-full"
               />
             </motion.div>
@@ -269,10 +327,11 @@ export default function Agency() {
               transition={{ duration: 0.5 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground mb-6">
-                Ready to <span className="text-primary">Grow</span> Your Business?
+                Ready to <span className="text-primary">Grow</span> Your
+                Business?
               </h2>
               <p className="text-secondary-foreground/80 text-lg mb-8">
-                Let's discuss how our digital marketing expertise can help you 
+                Let's discuss how our digital marketing expertise can help you
                 achieve your business goals. Get a free consultation today.
               </p>
               <ul className="space-y-4">
@@ -281,7 +340,10 @@ export default function Agency() {
                   "Custom strategy tailored to your business",
                   "Transparent pricing & reporting",
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-secondary-foreground/90">
+                  <li
+                    key={item}
+                    className="flex items-center gap-3 text-secondary-foreground/90"
+                  >
                     <CheckCircle className="h-5 w-5 text-primary shrink-0" />
                     <span>{item}</span>
                   </li>
@@ -300,6 +362,7 @@ export default function Agency() {
                 description="Tell us about your project"
                 buttonText="Get Started"
                 showMessage
+                source="consultation"
               />
             </motion.div>
           </div>

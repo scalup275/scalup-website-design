@@ -3,16 +3,16 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logo.png";
+import logoagency from "@/assets/logoagency.png";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "Learning", href: "/learning" },
-  { name: "Agency", href: "/agency" },
   { name: "About", href: "/about" },
-  { name: "Blog", href: "/blog" },
+  { name: "Agency", href: "/agency" },
+  { name: "Blogs", href: "/blog" },
   { name: "FAQs", href: "/faqs" },
-  { name: "Work With Us", href: "/careers" },
+  { name: "Work with us", href: "/careers" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -20,6 +20,8 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const isAgencyPage = location.pathname.startsWith("/agency");
+  const currentLogo = isAgencyPage ? logoagency : logo;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,12 +42,12 @@ export function Header() {
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        {/* Logo */}
+        {/* Logo + agency logo*/}
         <Link to="/" className="flex items-center gap-2 group">
           <img
-            src={logo}
+            src={currentLogo}
             alt="SCALUP Digital Marketing School"
-            className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
+            className="h-20 md:h-18 w-auto transition-transform duration-300 group-hover:scale-105"
           />
         </Link>
 
@@ -69,7 +71,7 @@ export function Header() {
         {/* CTA Button */}
         <div className="hidden lg:flex items-center gap-3">
           <Button variant="hero" size="lg" asChild>
-            <Link to="/contact">Book Free Demo</Link>
+            <Link to="/contact">Book Free Demo Class</Link>
           </Button>
         </div>
 
@@ -83,9 +85,9 @@ export function Header() {
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px] bg-background p-0">
             <div className="flex flex-col h-full">
-              {/* Mobile Header */}
+              {/* Mobile Header,included agency logo */}
               <div className="flex items-center justify-between p-4 border-b">
-                <img src={logo} alt="SCALUP" className="h-10 w-auto" />
+                <img src={currentLogo} alt="SCALUP" className="h-10 w-auto" />
               </div>
 
               {/* Mobile Navigation */}
