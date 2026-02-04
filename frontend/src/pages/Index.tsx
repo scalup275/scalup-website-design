@@ -25,7 +25,7 @@ import chatgpt from "@/assets/chatgpt.svg";
 import meta from "@/assets/meta.svg";
 import notion from "@/assets/Notion-logo.svg.png";
 import semrush from "@/assets/Semrush_logo.svg.png";
-import tagManager from "@/assets/tag_manager_logo.png";
+import tagManager from "@/assets/Tag_manager_logo.png";
 import youtube from "@/assets/youtube.jpg";
 import hubspot from "@/assets/HubSpot_Logo.png";
 import linkedin from "@/assets/LinkedIn_icon.svg.png";
