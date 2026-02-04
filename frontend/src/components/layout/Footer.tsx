@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
-import { Instagram, Linkedin, Mail, MapPin, Phone, ExternalLink } from "lucide-react";
+import {
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  ExternalLink,
+} from "lucide-react";
 import logo from "@/assets/logo.jpeg";
 
 const quickLinks = [
   { name: "Home", href: "/" },
-  { name: "Learning", href: "/learning" },
   { name: "Agency", href: "/agency" },
   { name: "About Us", href: "/about" },
   { name: "FAQs", href: "/faqs" },
@@ -19,9 +25,21 @@ const programs = [
 ];
 
 const socialLinks = [
-  { name: "Instagram (Learning)", href: "https://instagram.com/scalup.learning", icon: Instagram },
-  { name: "Instagram (Agency)", href: "https://instagram.com/scalup.agency", icon: Instagram },
-  { name: "LinkedIn", href: "https://linkedin.com/company/scalup", icon: Linkedin },
+  {
+    name: "Instagram (Learning)",
+    href: "https://instagram.com/scalup.learning",
+    icon: Instagram,
+  },
+  {
+    name: "Instagram (Agency)",
+    href: "https://instagram.com/scalup.agency",
+    icon: Instagram,
+  },
+  {
+    name: "LinkedIn",
+    href: "https://linkedin.com/company/scalup",
+    icon: Linkedin,
+  },
 ];
 
 export function Footer() {
@@ -40,8 +58,9 @@ export function Footer() {
               />
             </Link>
             <p className="text-secondary-foreground/80 text-sm leading-relaxed mb-6">
-              SCALUP is one of the leading training providers with 1000+ learners across 5 countries. 
-              We democratize education because everyone deserves quality learning.
+              SCALUP is one of the leading training providers with 1000+
+              learners across 5 countries. We democratize education because
+              everyone deserves quality learning.
             </p>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
@@ -61,7 +80,9 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-primary">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-6 text-primary">
+              Quick Links
+            </h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -78,7 +99,9 @@ export function Footer() {
 
           {/* Programs */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-primary">Programs</h3>
+            <h3 className="text-lg font-semibold mb-6 text-primary">
+              Programs
+            </h3>
             <ul className="space-y-3">
               {programs.map((program) => (
                 <li key={program.name}>
@@ -95,22 +118,31 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-primary">Contact Us</h3>
+            <h3 className="text-lg font-semibold mb-6 text-primary">
+              Contact Us
+            </h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                 <span className="text-secondary-foreground/70 text-sm">
-                  Bypass, Hyderpora, Srinagar,<br />
+                  Bypass, Hyderpora, Srinagar,
+                  <br />
                   Jammu and Kashmir 190014
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary shrink-0" />
                 <div className="text-secondary-foreground/70 text-sm">
-                  <a href="tel:+919797703232" className="hover:text-primary transition-colors block">
+                  <a
+                    href="tel:+919797703232"
+                    className="hover:text-primary transition-colors block"
+                  >
                     +91 9797703232
                   </a>
-                  <a href="tel:+919596019337" className="hover:text-primary transition-colors block">
+                  <a
+                    href="tel:+919596019337"
+                    className="hover:text-primary transition-colors block"
+                  >
                     +91 9596019337
                   </a>
                 </div>
@@ -133,7 +165,8 @@ export function Footer() {
       <div className="border-t border-secondary-foreground/10">
         <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-secondary-foreground/60 text-sm text-center md:text-left">
-            © {new Date().getFullYear()} SCALUP Digital Marketing School. All rights reserved.
+            © {new Date().getFullYear()} SCALUP Digital Marketing School. All
+            rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <a

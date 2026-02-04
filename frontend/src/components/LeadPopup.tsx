@@ -12,13 +12,11 @@ export function LeadPopup() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    if (!sessionStorage.getItem("scalup_popup_shown")) {
-      const timer = setTimeout(() => {
-        setOpen(true);
-        sessionStorage.setItem("scalup_popup_shown", "true");
-      }, 10000);
-      return () => clearTimeout(timer);
-    }
+    const timer = setTimeout(() => {
+      setOpen(true);
+    }, 1000); // 10 seconds
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
