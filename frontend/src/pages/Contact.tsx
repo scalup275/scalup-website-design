@@ -30,7 +30,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    details: ["admin@scalup.org", "contact@scalup.org"],
+    details: ["admin@scalup.org", "hr@scalup.org"],
     link: "mailto:admin@scalup.org",
     linkText: "Send Email",
   },
@@ -68,9 +68,9 @@ export default function Contact() {
       {/* Hero Section with Image */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src={contactHero} 
-            alt="Contact SCALUP" 
+          <img
+            src={contactHero}
+            alt="Contact SCALUP"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/70" />
@@ -90,8 +90,8 @@ export default function Contact() {
               Get in <span className="text-primary">Touch</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              Have questions about our programs or services? We'd love to hear from you. 
-              Reach out and we'll respond within 24 hours.
+              Have questions about our programs or services? We'd love to hear
+              from you. Reach out and we'll respond within 24 hours.
             </p>
           </motion.div>
         </div>
@@ -113,7 +113,9 @@ export default function Contact() {
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <info.icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">{info.title}</h3>
+                <h3 className="font-semibold text-foreground mb-2">
+                  {info.title}
+                </h3>
                 {info.details.map((detail, i) => (
                   <p key={i} className="text-sm text-muted-foreground">
                     {detail}
@@ -177,7 +179,9 @@ export default function Contact() {
 
               {/* Social Links */}
               <div className="bg-card rounded-xl p-6 border border-border/50">
-                <h3 className="font-semibold text-foreground mb-4">Connect With Us</h3>
+                <h3 className="font-semibold text-foreground mb-4">
+                  Connect With Us
+                </h3>
                 <div className="space-y-3">
                   {socialLinks.map((social) => (
                     <a
@@ -191,8 +195,12 @@ export default function Contact() {
                         <social.icon className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
                       </div>
                       <div>
-                        <p className="font-medium text-foreground">{social.name}</p>
-                        <p className="text-sm text-muted-foreground">{social.handle}</p>
+                        <p className="font-medium text-foreground">
+                          {social.name}
+                        </p>
+                        <p className="text-sm text-muted-foreground">
+                          {social.handle}
+                        </p>
                       </div>
                       <ExternalLink className="h-4 w-4 text-muted-foreground ml-auto" />
                     </a>
@@ -214,11 +222,12 @@ export default function Contact() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-2xl md:text-3xl font-bold text-secondary-foreground mb-4">
-              Ready to Start Your <span className="text-primary">Digital Marketing</span> Journey?
+              Ready to Start Your{" "}
+              <span className="text-primary">Digital Marketing</span> Journey?
             </h2>
             <p className="text-secondary-foreground/80 max-w-xl mx-auto">
-              Book a free demo class and experience our teaching methodology firsthand. 
-              No commitment required.
+              Book a free demo class and experience our teaching methodology
+              firsthand. No commitment required.
             </p>
           </motion.div>
         </div>

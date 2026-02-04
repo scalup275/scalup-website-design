@@ -10,10 +10,12 @@ import {
 import logo from "@/assets/logo.jpeg";
 
 const quickLinks = [
-  { name: "Home", href: "/" },
+  { name: "Learning", href: "/" },
+  { name: "About", href: "/about" },
   { name: "Agency", href: "/agency" },
-  { name: "About Us", href: "/about" },
+  { name: "Blogs", href: "/blog" },
   { name: "FAQs", href: "/faqs" },
+  { name: "Work with us", href: "/careers" },
   { name: "Contact", href: "/contact" },
 ];
 

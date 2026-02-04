@@ -13,62 +13,78 @@ import faqHero from "@/assets/faq-hero.jpg";
 const learningFAQs = [
   {
     question: "What should I do before each class?",
-    answer: "Review your previous class notes and homework assignments. Clarify any doubts from the last session before attending the next class. Charge your laptop and phone fully, and test your internet connection to ensure stable WiFi or mobile data connectivity.",
+    answer:
+      "Review your previous class notes and homework assignments. Clarify any doubts from the last session before attending the next class. Charge your laptop and phone fully, and test your internet connection to ensure stable WiFi or mobile data connectivity.",
   },
   {
-    question: "What time do classes start and what is expected during live classes?",
-    answer: "Classes start at 2:45 PM sharp. No entry is allowed for latecomers after 3:00 PM. During live classes, participate actively by asking questions freely, sharing ideas in discussions, and engaging with peers during group activities. Remember, no question is too basic.",
+    question:
+      "What time do classes start and what is expected during live classes?",
+    answer:
+      "Classes start at 2:45 PM sharp. No entry is allowed for latecomers after 3:00 PM. During live classes, participate actively by asking questions freely, sharing ideas in discussions, and engaging with peers during group activities. Remember, no question is too basic.",
   },
   {
     question: "How should I take notes effectively?",
-    answer: "Use a structured format with these components: Topic, Key Learning Points, Action Items, and Doubts. Screenshot important slides and save all class materials in a dedicated folder for revision.",
+    answer:
+      "Use a structured format with these components: Topic, Key Learning Points, Action Items, and Doubts. Screenshot important slides and save all class materials in a dedicated folder for revision.",
   },
   {
-    question: "When should I submit assignments and how much time for projects?",
-    answer: "Submit assignments before the next class session. Work on real client projects for a minimum of 6 hours weekly. Use Canva Pro for all design tasks - free access is provided to all students.",
+    question:
+      "When should I submit assignments and how much time for projects?",
+    answer:
+      "Submit assignments before the next class session. Work on real client projects for a minimum of 6 hours weekly. Use Canva Pro for all design tasks - free access is provided to all students.",
   },
   {
     question: "What are the project quality standards?",
-    answer: "Treat every project like a paid client assignment. Document your process with screenshots and reasoning, seek peer feedback before final submission, and revise based on mentor comments.",
+    answer:
+      "Treat every project like a paid client assignment. Document your process with screenshots and reasoning, seek peer feedback before final submission, and revise based on mentor comments.",
   },
   {
     question: "What are the eligibility criteria for the certificate?",
-    answer: "You must meet all requirements: Attend minimum 80% of classes, complete all projects, pass the final assessment, and clear all pending fees. The certificate provides industry-recognized credentials, portfolio showcase opportunity, and job referral support.",
+    answer:
+      "You must meet all requirements: Attend minimum 80% of classes, complete all projects, pass the final assessment, and clear all pending fees. The certificate provides industry-recognized credentials, portfolio showcase opportunity, and job referral support.",
   },
   {
     question: "How can I contact mentors and get support?",
-    answer: "Email mentors for detailed project feedback, use WhatsApp for quick doubts only, and schedule phone calls by prior appointment. Response time is 24 hours. 24/7 support is available for technical issues.",
+    answer:
+      "Email mentors for detailed project feedback, use WhatsApp for quick doubts only, and schedule phone calls by prior appointment. Response time is 24 hours. 24/7 support is available for technical issues.",
   },
 ];
 
 const agencyFAQs = [
   {
     question: "What digital marketing services does SCALUP Agency offer?",
-    answer: "We offer comprehensive digital marketing services including SEO (Search Engine Optimization), Meta Ads (Facebook & Instagram), Google Ads, Content Marketing, Social Media Marketing, and Analytics & Reporting.",
+    answer:
+      "We offer comprehensive digital marketing services including SEO (Search Engine Optimization), Meta Ads (Facebook & Instagram), Google Ads, Content Marketing, Social Media Marketing, and Analytics & Reporting.",
   },
   {
     question: "How do you approach a new project?",
-    answer: "We follow a three-step process: Strategy (analyze your business, competitors, and market), Execution (implement campaigns with precision and creativity), and Growth (continuously optimize for maximum ROI).",
+    answer:
+      "We follow a three-step process: Strategy (analyze your business, competitors, and market), Execution (implement campaigns with precision and creativity), and Growth (continuously optimize for maximum ROI).",
   },
   {
     question: "What industries do you work with?",
-    answer: "We serve a diverse range of industries including Tech Startups, E-commerce, Healthcare, Education, Real Estate, Hospitality, Finance, and Retail.",
+    answer:
+      "We serve a diverse range of industries including Tech Startups, E-commerce, Healthcare, Education, Real Estate, Hospitality, Finance, and Retail.",
   },
   {
     question: "How do you measure success?",
-    answer: "We use comprehensive analytics and reporting to track KPIs, conversions, and ROI. We provide monthly reports with actionable insights and recommendations for continuous improvement.",
+    answer:
+      "We use comprehensive analytics and reporting to track KPIs, conversions, and ROI. We provide monthly reports with actionable insights and recommendations for continuous improvement.",
   },
   {
     question: "What is your pricing structure?",
-    answer: "Our pricing is customized based on your business needs and goals. Contact us for a free consultation where we'll discuss your requirements and provide a tailored proposal.",
+    answer:
+      "Our pricing is customized based on your business needs and goals. Contact us for a free consultation where we'll discuss your requirements and provide a tailored proposal.",
   },
   {
     question: "How long does it take to see results?",
-    answer: "Results timeline varies by service. SEO typically shows results in 3-6 months, while paid advertising can generate leads within weeks. We set realistic expectations and provide regular progress updates.",
+    answer:
+      "Results timeline varies by service. SEO typically shows results in 3-6 months, while paid advertising can generate leads within weeks. We set realistic expectations and provide regular progress updates.",
   },
   {
     question: "Do you offer ongoing support and management?",
-    answer: "Yes, we offer continuous campaign management, optimization, and support. Our team monitors performance daily and makes adjustments to maximize your results.",
+    answer:
+      "Yes, we offer continuous campaign management, optimization, and support. Our team monitors performance daily and makes adjustments to maximize your results.",
   },
 ];
 
@@ -78,9 +94,9 @@ export default function FAQs() {
       {/* Hero Section with Image */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src={faqHero} 
-            alt="FAQs" 
+          <img
+            src={faqHero}
+            alt="FAQs"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background" />
@@ -100,7 +116,8 @@ export default function FAQs() {
               Frequently Asked <span className="text-primary">Questions</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              Find answers to common questions about our learning programs and agency services.
+              Find answers to common questions about our learning programs and
+              agency services.
             </p>
           </motion.div>
         </div>
@@ -121,8 +138,12 @@ export default function FAQs() {
                 <BookOpen className="h-7 w-7 text-primary" />
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-foreground">Learning FAQs</h2>
-                <p className="text-muted-foreground">Questions about our digital marketing program</p>
+                <h2 className="text-2xl font-bold text-foreground">
+                  Course FAQs
+                </h2>
+                <p className="text-muted-foreground">
+                  Questions about our digital marketing program
+                </p>
               </div>
             </motion.div>
 
@@ -168,8 +189,12 @@ export default function FAQs() {
                 <Building2 className="h-7 w-7 text-primary" />
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-foreground">Agency FAQs</h2>
-                <p className="text-muted-foreground">Questions about our marketing services</p>
+                <h2 className="text-2xl font-bold text-foreground">
+                  Digital Agency FAQs
+                </h2>
+                <p className="text-muted-foreground">
+                  Questions about our marketing services
+                </p>
               </div>
             </motion.div>
 
@@ -214,19 +239,25 @@ export default function FAQs() {
                 Still Have <span className="text-primary">Questions</span>?
               </h2>
               <p className="text-secondary-foreground/80 text-lg mb-6">
-                Can't find the answer you're looking for? Our team is here to help. 
-                Reach out to us and we'll get back to you within 24 hours.
+                Can't find the answer you're looking for? Our team is here to
+                help. Reach out to us and we'll get back to you within 24 hours.
               </p>
               <div className="space-y-4 text-secondary-foreground/80">
                 <p>
                   <strong>Email:</strong>{" "}
-                  <a href="mailto:admin@scalup.org" className="text-primary hover:underline">
+                  <a
+                    href="mailto:admin@scalup.org"
+                    className="text-primary hover:underline"
+                  >
                     admin@scalup.org
                   </a>
                 </p>
                 <p>
                   <strong>Phone:</strong>{" "}
-                  <a href="tel:+919797703232" className="text-primary hover:underline">
+                  <a
+                    href="tel:+919797703232"
+                    className="text-primary hover:underline"
+                  >
                     +91 9797703232
                   </a>
                 </p>
@@ -244,6 +275,7 @@ export default function FAQs() {
                 description="We'll get back to you within 24 hours"
                 buttonText="Send Question"
                 showMessage
+                source="consultation"
               />
             </motion.div>
           </div>

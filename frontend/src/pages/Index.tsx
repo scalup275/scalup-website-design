@@ -167,10 +167,11 @@ export default function Index() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button variant="hero-outline" size="xl" asChild>
-                  <Link to="/learning">
-                    <Play className="mr-2 h-5 w-5" /> Explore Program
-                  </Link>
+                <Button variant="hero-outline" size="lg" asChild>
+                  <a href="/Scalupmain.pdf" download>
+                    <Play className="mr-2 h-5 w-5" />
+                    Download Program Brochure
+                  </a>
                 </Button>
               </div>
 
@@ -352,10 +353,11 @@ export default function Index() {
                   </li>
                 ))}
               </ul>
-              <Button variant="hero" size="lg" asChild>
-                <Link to="/learning">
-                  View Full Curriculum <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+              <Button variant="hero-outline" size="lg" asChild>
+                <a href="/scalupsyallbus.pdf" download>
+                  View Full Curriculum
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
               </Button>
             </motion.div>
 
@@ -421,6 +423,7 @@ export default function Index() {
                   "Google Analytics",
                   "Product Positioning",
                   "Pricing Strategy",
+                  "Performance Marketing",
                 ].map((skill) => (
                   <span
                     key={skill}
@@ -488,54 +491,47 @@ export default function Index() {
             description="Real stories from real students who transformed their careers"
           />
 
-          {/* Carousel wrapper */}
-          <div className="relative overflow-hidden">
-            <motion.div
-              className="flex gap-6 cursor-grab active:cursor-grabbing"
-              drag="x"
-              dragConstraints={{ left: -600, right: 0 }}
-              initial={{ x: 0 }}
-            >
-              {testimonials.map((testimonial) => (
-                <motion.div
-                  key={testimonial.name}
-                  whileHover={{ y: -6 }}
-                  className="min-w-[320px] max-w-[360px] bg-card rounded-2xl p-6 border border-border/50 shadow-md"
-                >
-                  {/* Stars */}
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="h-5 w-5 fill-primary text-primary"
-                      />
-                    ))}
-                  </div>
-
-                  {/* Content */}
-                  <p className="text-foreground mb-6 italic">
-                    "{testimonial.content}"
-                  </p>
-
-                  {/* Author */}
-                  <div className="flex items-center gap-3">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-12 h-12 rounded-full object-cover border border-border"
+          {/* 2-column grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+            {testimonials.map((testimonial) => (
+              <motion.div
+                key={testimonial.name}
+                whileHover={{ y: -6 }}
+                className="bg-card rounded-2xl p-6 border border-border/50 shadow-md"
+              >
+                {/* Stars */}
+                <div className="flex gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="h-5 w-5 fill-primary text-primary"
                     />
-                    <div>
-                      <p className="font-semibold text-foreground">
-                        {testimonial.name}
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        {testimonial.role}
-                      </p>
-                    </div>
+                  ))}
+                </div>
+
+                {/* Content */}
+                <p className="text-foreground mb-6 italic">
+                  "{testimonial.content}"
+                </p>
+
+                {/* Author */}
+                <div className="flex items-center gap-3">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full object-cover border border-border"
+                  />
+                  <div>
+                    <p className="font-semibold text-foreground">
+                      {testimonial.name}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {testimonial.role}
+                    </p>
                   </div>
-                </motion.div>
-              ))}
-            </motion.div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

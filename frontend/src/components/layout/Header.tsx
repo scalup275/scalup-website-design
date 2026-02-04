@@ -7,7 +7,7 @@ import logo from "@/assets/logo.png";
 import logoagency from "@/assets/logoagency.png";
 
 const navLinks = [
-  { name: "Home", href: "/" },
+  { name: "Learning", href: "/" },
   { name: "About", href: "/about" },
   { name: "Agency", href: "/agency" },
   { name: "Blogs", href: "/blog" },
