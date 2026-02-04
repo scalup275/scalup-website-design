@@ -18,6 +18,8 @@ import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { SectionHeading } from "@/components/SectionHeading";
 import { LeadForm } from "@/components/LeadForm";
+import agencyHero from "@/assets/agency-hero.jpg";
+import marketingTools from "@/assets/marketing-tools.jpg";
 
 const services = [
   {
@@ -84,17 +86,23 @@ const clients = [
 export default function Agency() {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-light">
-        <div className="absolute inset-0 bg-hero-pattern opacity-50" />
-        <div className="absolute top-20 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+      {/* Hero Section with Image */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src={agencyHero} 
+            alt="SCALUP Agency" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/70" />
+        </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
+            className="max-w-2xl"
           >
             <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
               🚀 SCALUP Agency
@@ -103,12 +111,12 @@ export default function Agency() {
               Scale Your Business with{" "}
               <span className="text-primary">Data-Driven</span> Marketing
             </h1>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground mb-8">
               We help businesses grow with strategic digital marketing solutions. 
               From SEO to paid ads, we've got you covered.
             </p>
 
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap gap-4">
               <Button variant="hero" size="xl" asChild>
                 <Link to="/contact">
                   Get a Free Consultation <ArrowRight className="ml-2 h-5 w-5" />
@@ -166,40 +174,57 @@ export default function Agency() {
         </div>
       </section>
 
-      {/* Process */}
+      {/* Process with Image */}
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">
-          <SectionHeading
-            badge="Our Process"
-            title={
-              <>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                Our Process
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
                 How We <span className="text-primary">Work</span>
-              </>
-            }
-            description="A proven approach to delivering results"
-          />
+              </h2>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {process.map((item, index) => (
-              <motion.div
-                key={item.step}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="relative text-center"
-              >
-                <div className="text-6xl font-bold text-primary/20 mb-4">{item.step}</div>
-                <h3 className="text-2xl font-bold text-foreground mb-3">{item.title}</h3>
-                <p className="text-muted-foreground">{item.description}</p>
-                
-                {index < process.length - 1 && (
-                  <div className="hidden md:block absolute top-8 -right-4 w-8">
-                    <ArrowRight className="h-6 w-6 text-primary/30" />
-                  </div>
-                )}
-              </motion.div>
-            ))}
+              <div className="space-y-6">
+                {process.map((item, index) => (
+                  <motion.div
+                    key={item.step}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    className="flex gap-4"
+                  >
+                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                      <span className="text-2xl font-bold text-primary">{item.step}</span>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground mb-2">{item.title}</h3>
+                      <p className="text-muted-foreground">{item.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <img 
+                src={marketingTools} 
+                alt="Digital Marketing Tools" 
+                className="rounded-2xl shadow-2xl w-full"
+              />
+            </motion.div>
           </div>
         </div>
       </section>
