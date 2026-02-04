@@ -9,8 +9,8 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
-import { SectionHeading } from "@/components/SectionHeading";
 import { LeadForm } from "@/components/LeadForm";
+import contactHero from "@/assets/contact-hero.jpg";
 
 const contactInfo = [
   {
@@ -65,16 +65,23 @@ const socialLinks = [
 export default function Contact() {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-light">
-        <div className="absolute inset-0 bg-hero-pattern opacity-50" />
+      {/* Hero Section with Image */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src={contactHero} 
+            alt="Contact SCALUP" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/70" />
+        </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
+            className="max-w-2xl"
           >
             <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
               Contact Us

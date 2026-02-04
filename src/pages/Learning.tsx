@@ -24,6 +24,8 @@ import { Layout } from "@/components/layout/Layout";
 import { SectionHeading } from "@/components/SectionHeading";
 import { LeadForm } from "@/components/LeadForm";
 import classroom from "@/assets/classroom.png";
+import learningHero from "@/assets/learning-hero.jpg";
+import successStudents from "@/assets/success-students.jpg";
 
 const modules = [
   {
@@ -135,10 +137,16 @@ const careerServices = [
 export default function Learning() {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-light">
-        <div className="absolute inset-0 bg-hero-pattern opacity-50" />
-        <div className="absolute top-20 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+      {/* Hero Section with Background Image */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src={learningHero} 
+            alt="Digital Marketing Learning" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/70" />
+        </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -189,13 +197,17 @@ export default function Learning() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
+              className="relative hidden lg:block"
             >
               <img
                 src={classroom}
                 alt="SCALUP Classroom"
                 className="rounded-2xl shadow-2xl"
               />
+              <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground rounded-xl p-4 shadow-lg">
+                <p className="text-2xl font-bold">100%</p>
+                <p className="text-sm">Job Assistance</p>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -290,8 +302,57 @@ export default function Learning() {
         </div>
       </section>
 
-      {/* Skills & Tools */}
+      {/* Success Stories Image Section */}
       <section className="py-24 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <img 
+                src={successStudents} 
+                alt="SCALUP Graduates" 
+                className="rounded-2xl shadow-2xl w-full"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                Success Stories
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Join 1000+ <span className="text-primary">Successful</span> Graduates
+              </h2>
+              <p className="text-muted-foreground mb-6">
+                Our alumni are working at top companies and running successful businesses. 
+                With an average salary hike of 55% and 100% placement assistance, 
+                your success story starts here.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-card rounded-xl p-4 border border-border/50">
+                  <p className="text-3xl font-bold text-primary">55%</p>
+                  <p className="text-sm text-muted-foreground">Avg. Salary Hike</p>
+                </div>
+                <div className="bg-card rounded-xl p-4 border border-border/50">
+                  <p className="text-3xl font-bold text-primary">400+</p>
+                  <p className="text-sm text-muted-foreground">Hiring Partners</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills & Tools */}
+      <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Skills */}
@@ -344,7 +405,7 @@ export default function Learning() {
       </section>
 
       {/* Career Services */}
-      <section className="py-24 bg-background">
+      <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">
           <SectionHeading
             badge="Career Services"
@@ -378,7 +439,7 @@ export default function Learning() {
       </section>
 
       {/* Who Can Apply */}
-      <section className="py-24 bg-muted/30">
+      <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <SectionHeading
             badge="Eligibility"
