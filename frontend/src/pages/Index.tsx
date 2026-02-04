@@ -19,6 +19,23 @@ import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { SectionHeading } from "@/components/SectionHeading";
 import { LeadForm } from "@/components/LeadForm";
 import classroom from "@/assets/classroom.png";
+import ahrefs from "@/assets/ahrefs.png";
+import canva from "@/assets/canva.png";
+import chatgpt from "@/assets/chatgpt.svg";
+import meta from "@/assets/meta.svg";
+import notion from "@/assets/Notion-logo.svg.png";
+import semrush from "@/assets/Semrush_logo.svg.png";
+import tagManager from "@/assets/tag_manager_logo.png";
+import youtube from "@/assets/youtube.jpg";
+import hubspot from "@/assets/HubSpot_Logo.png";
+import linkedin from "@/assets/LinkedIn_icon.svg.png";
+import analytics from "@/assets/Logo_Google_Analytics.svg.png";
+import hootsuite from "@/assets/Hootsuite_logo.png";
+import mailchimp from "@/assets/mailchimp.png";
+import mink from "@/assets/mink-arora.jpeg";
+import shahid from "@/assets/Shahid-Sultan.jpeg";
+import uzma from "@/assets/Uzma-Hassan.jpeg";
+import imran from "@/assets/Imran-Shaban.jpeg";
 
 const stats = [
   { end: 100, suffix: "+", label: "Active Learners" },
@@ -28,38 +45,87 @@ const stats = [
 ];
 
 const highlights = [
-  { icon: BookOpen, title: "Industry Practitioners", description: "Learn from top digital marketing experts" },
-  { icon: TrendingUp, title: "Self-paced Learning", description: "Flexible schedule that fits your life" },
-  { icon: Target, title: "5+ Industry Projects", description: "Hands-on case studies & real clients" },
-  { icon: Zap, title: "AI-Powered Curriculum", description: "Latest tools including ChatGPT & automation" },
-  { icon: Briefcase, title: "Paid Internship", description: "Guaranteed remote internship with stipend" },
-  { icon: Award, title: "Certification", description: "Industry-recognized credential" },
+  {
+    icon: BookOpen,
+    title: "Industry Practitioners",
+    description: "Learn from top digital marketing experts",
+  },
+  {
+    icon: TrendingUp,
+    title: "Self-paced Learning",
+    description: "Flexible schedule that fits your life",
+  },
+  {
+    icon: Target,
+    title: "5+ Industry Projects",
+    description: "Hands-on case studies & real clients",
+  },
+  {
+    icon: Zap,
+    title: "AI-Powered Curriculum",
+    description: "Latest tools including ChatGPT & automation",
+  },
+  {
+    icon: Briefcase,
+    title: "Paid Internship",
+    description: "Guaranteed remote internship with stipend",
+  },
+  {
+    icon: Award,
+    title: "Certification",
+    description: "Industry-recognized credential",
+  },
 ];
 
 const testimonials = [
   {
-    name: "Ayzal",
-    role: "SEO Account Manager",
-    content: "Thanks to Scalup for such a wonderful Digital Marketing course. Good trainers and rich content along with real-world assignments & projects. All topics were well taught. Would recommend to all.",
+    name: "Mink Arora",
+    role: "SEO Specialist",
+    image: mink,
+    content:
+      "Thanks to Scalup for such a wonderful Digital Marketing course. Good trainers and rich content along with real-world assignments & projects.",
     rating: 5,
   },
   {
-    name: "Stuti",
-    role: "Marketing Manager",
-    content: "I'm very impressed by the case studies, projects, assignments, and self-paced learning videos. Even freshers can learn easily. The trainer was helpful while explaining and clarifying doubts.",
+    name: "Shahid Sultan",
+    role: "Performance Marketer",
+    image: shahid,
+    content:
+      "The case studies, projects, and mentorship helped me gain real confidence. Highly recommended for anyone serious about digital marketing.",
     rating: 5,
   },
   {
-    name: "Zeeshan",
-    role: "Content Analyst",
-    content: "The curriculum is impressive and the mentorship support helped me land my dream job. The practical approach to learning made all the difference in my career transition.",
+    name: "Uzma Hassan",
+    role: "Marketing Executive",
+    image: uzma,
+    content:
+      "Even as a fresher, I could follow everything easily. The trainers were extremely supportive throughout the journey.",
+    rating: 5,
+  },
+  {
+    name: "Imran Shaban",
+    role: "Content Strategist",
+    image: imran,
+    content:
+      "The practical approach and real-world assignments made all the difference in my career transition.",
     rating: 5,
   },
 ];
 
 const partnerLogos = [
-  "Google", "Meta", "HubSpot", "Semrush", "Canva", "Mailchimp",
-  "LinkedIn", "Hootsuite", "Ahrefs", "ChatGPT"
+  { name: "Meta Ads", src: meta },
+  { name: "ChatGPT", src: chatgpt },
+  { name: "Canva", src: canva },
+  { name: "Semrush", src: semrush },
+  { name: "Ahrefs", src: ahrefs },
+  { name: "Mailchimp", src: mailchimp },
+  { name: "HubSpot", src: hubspot },
+  { name: "LinkedIn", src: linkedin },
+  { name: "YouTube", src: youtube },
+  { name: "Google Analytics", src: analytics },
+  { name: "Tag Manager", src: tagManager },
+  { name: "Hootsuite", src: hootsuite },
+  { name: "Notion", src: notion },
 ];
 
 export default function Index() {
@@ -85,17 +151,20 @@ export default function Index() {
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
                 Scale Your Career with{" "}
-                <span className="text-primary">Job-Ready</span> Digital Marketing Skills
+                <span className="text-primary">Job-Ready</span> Digital
+                Marketing Skills
               </h1>
               <p className="text-lg text-muted-foreground mb-8 max-w-xl">
-                Master the hottest skills of the 21st century with AI-driven learning, 
-                real projects, and guaranteed paid internships. Transform your career in just 12 weeks.
+                Master the hottest skills of the 21st century with AI-driven
+                learning, real projects, and guaranteed paid internships.
+                Transform your career in just 12 weeks.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-10">
                 <Button variant="hero" size="xl" asChild>
                   <Link to="/contact">
-                    Book Free Consultation <ArrowRight className="ml-2 h-5 w-5" />
+                    Book Free Consultation{" "}
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
                 <Button variant="hero-outline" size="xl" asChild>
@@ -132,7 +201,7 @@ export default function Index() {
                   className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 via-transparent to-transparent" />
-                
+
                 {/* Floating Stats Card */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -142,17 +211,25 @@ export default function Index() {
                 >
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-muted-foreground">Program Duration</p>
-                      <p className="text-xl font-bold text-foreground">12 Weeks</p>
+                      <p className="text-sm text-muted-foreground">
+                        Program Duration
+                      </p>
+                      <p className="text-xl font-bold text-foreground">
+                        12 Weeks
+                      </p>
                     </div>
                     <div className="w-px h-10 bg-border" />
                     <div>
                       <p className="text-sm text-muted-foreground">Format</p>
-                      <p className="text-xl font-bold text-foreground">Live + Projects</p>
+                      <p className="text-xl font-bold text-foreground">
+                        Live + Projects
+                      </p>
                     </div>
                     <div className="w-px h-10 bg-border" />
                     <div>
-                      <p className="text-sm text-muted-foreground">Internship</p>
+                      <p className="text-sm text-muted-foreground">
+                        Internship
+                      </p>
                       <p className="text-xl font-bold text-primary">Paid ✓</p>
                     </div>
                   </div>
@@ -193,7 +270,8 @@ export default function Index() {
             badge="Why Choose Us"
             title={
               <>
-                What Makes <span className="text-primary">SCALUP</span> Different
+                What Makes <span className="text-primary">SCALUP</span>{" "}
+                Different
               </>
             }
             description="We don't just teach marketing—we build careers with hands-on experience and industry connections"
@@ -212,7 +290,9 @@ export default function Index() {
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                   <item.icon className="h-7 w-7 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">{item.title}</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-2">
+                  {item.title}
+                </h3>
                 <p className="text-muted-foreground">{item.description}</p>
               </motion.div>
             ))}
@@ -227,7 +307,8 @@ export default function Index() {
             badge="Programs"
             title={
               <>
-                Kickstart Your <span className="text-primary">Digital Marketing</span> Career
+                Kickstart Your{" "}
+                <span className="text-primary">Digital Marketing</span> Career
               </>
             }
             description="Our comprehensive curriculum covers everything from SEO to AI-powered marketing automation"
@@ -254,7 +335,8 @@ export default function Index() {
                 AI-Driven Digital Marketing Bootcamp
               </h3>
               <p className="text-muted-foreground mb-6">
-                Master Meta Ads, Google Ads, SEO, AI Tools, and get a guaranteed paid internship with our flagship program.
+                Master Meta Ads, Google Ads, SEO, AI Tools, and get a guaranteed
+                paid internship with our flagship program.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
@@ -294,8 +376,12 @@ export default function Index() {
                   className="bg-card rounded-xl p-5 border border-border/50 hover:border-primary/30 transition-all"
                 >
                   <module.icon className="h-8 w-8 text-primary mb-3" />
-                  <h4 className="font-semibold text-foreground mb-1">{module.title}</h4>
-                  <p className="text-sm text-muted-foreground">{module.weeks}</p>
+                  <h4 className="font-semibold text-foreground mb-1">
+                    {module.title}
+                  </h4>
+                  <p className="text-sm text-muted-foreground">
+                    {module.weeks}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -303,6 +389,7 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Testimonials */}
       {/* Testimonials */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
@@ -316,35 +403,54 @@ export default function Index() {
             description="Real stories from real students who transformed their careers"
           />
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card rounded-2xl p-6 border border-border/50 shadow-md"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-primary text-primary" />
-                  ))}
-                </div>
-                <p className="text-muted-foreground mb-6 italic">"{testimonial.content}"</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-primary font-semibold text-lg">
-                      {testimonial.name.charAt(0)}
-                    </span>
+          {/* Carousel wrapper */}
+          <div className="relative overflow-hidden">
+            <motion.div
+              className="flex gap-6 cursor-grab active:cursor-grabbing"
+              drag="x"
+              dragConstraints={{ left: -600, right: 0 }}
+              initial={{ x: 0 }}
+            >
+              {testimonials.map((testimonial) => (
+                <motion.div
+                  key={testimonial.name}
+                  whileHover={{ y: -6 }}
+                  className="min-w-[320px] max-w-[360px] bg-card rounded-2xl p-6 border border-border/50 shadow-md"
+                >
+                  {/* Stars */}
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="h-5 w-5 fill-primary text-primary"
+                      />
+                    ))}
                   </div>
-                  <div>
-                    <p className="font-semibold text-foreground">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+
+                  {/* Content */}
+                  <p className="text-foreground mb-6 italic">
+                    "{testimonial.content}"
+                  </p>
+
+                  {/* Author */}
+                  <div className="flex items-center gap-3">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-12 h-12 rounded-full object-cover border border-border"
+                    />
+                    <div>
+                      <p className="font-semibold text-foreground">
+                        {testimonial.name}
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        {testimonial.role}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>
@@ -364,7 +470,11 @@ export default function Index() {
                   key={index}
                   className="flex items-center justify-center px-10 py-4 mx-4 bg-background rounded-lg border border-border/50 min-w-[150px]"
                 >
-                  <span className="text-muted-foreground font-medium">{logo}</span>
+                  <img
+                    src={logo.src}
+                    alt={logo.name}
+                    className="h-10 w-auto object-contain transition duration-300"
+                  />
                 </div>
               ))}
             </div>
@@ -384,11 +494,13 @@ export default function Index() {
               transition={{ duration: 0.5 }}
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-foreground mb-6">
-                Ready to <span className="text-primary">Scale Up</span> Your Career?
+                Ready to <span className="text-primary">Scale Up</span> Your
+                Career?
               </h2>
               <p className="text-secondary-foreground/80 text-lg mb-8">
-                Join 1000+ learners who have transformed their careers with our 
-                industry-focused digital marketing program. Start your journey today.
+                Join 1000+ learners who have transformed their careers with our
+                industry-focused digital marketing program. Start your journey
+                today.
               </p>
               <ul className="space-y-4 mb-8">
                 {[
@@ -396,7 +508,10 @@ export default function Index() {
                   "Personalized learning path",
                   "Placement assistance included",
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-secondary-foreground/90">
+                  <li
+                    key={item}
+                    className="flex items-center gap-3 text-secondary-foreground/90"
+                  >
                     <CheckCircle className="h-5 w-5 text-primary shrink-0" />
                     <span>{item}</span>
                   </li>

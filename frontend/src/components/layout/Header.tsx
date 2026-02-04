@@ -10,6 +10,7 @@ const navLinks = [
   { name: "Learning", href: "/learning" },
   { name: "Agency", href: "/agency" },
   { name: "About", href: "/about" },
+  { name: "Blog", href: "/blog" },
   { name: "FAQs", href: "/faqs" },
   { name: "Work With Us", href: "/careers" },
   { name: "Contact", href: "/contact" },
@@ -108,7 +109,10 @@ export function Header() {
               {/* Mobile CTA */}
               <div className="p-4 border-t">
                 <Button variant="hero" className="w-full" asChild>
-                  <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Link
+                    to="/contact"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
                     Book Free Demo
                   </Link>
                 </Button>

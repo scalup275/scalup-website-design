@@ -24,6 +24,19 @@ import { Layout } from "@/components/layout/Layout";
 import { SectionHeading } from "@/components/SectionHeading";
 import { LeadForm } from "@/components/LeadForm";
 import classroom from "@/assets/classroom.png";
+import ahrefs from "@/assets/ahrefs.png";
+import canva from "@/assets/canva.png";
+import chatgpt from "@/assets/chatgpt.svg";
+import meta from "@/assets/meta.svg";
+import notion from "@/assets/Notion-logo.svg.png";
+import semrush from "@/assets/Semrush_logo.svg.png";
+import tagManager from "@/assets/tag_manager_logo.png";
+import youtube from "@/assets/youtube.jpg";
+import hubspot from "@/assets/HubSpot_Logo.png";
+import linkedin from "@/assets/LinkedIn_icon.svg.png";
+import analytics from "@/assets/Logo_Google_Analytics.svg.png";
+import hootsuite from "@/assets/Hootsuite_logo.png";
+import mailchimp from "@/assets/mailchimp.png";
 
 const modules = [
   {
@@ -113,23 +126,60 @@ const modules = [
 ];
 
 const skills = [
-  "SEO", "SEM", "SERPs", "On-page Optimization", "Real-time Analytics",
-  "Web Analytics", "Content Marketing", "Email Marketing", "Social Media Marketing",
-  "Facebook & Instagram Ads", "Video Marketing", "Marketing Analytics",
-  "Google Analytics", "Product Positioning", "Pricing Strategy",
+  "SEO",
+  "SEM",
+  "SERPs",
+  "On-page Optimization",
+  "Real-time Analytics",
+  "Web Analytics",
+  "Content Marketing",
+  "Email Marketing",
+  "Social Media Marketing",
+  "Facebook & Instagram Ads",
+  "Video Marketing",
+  "Marketing Analytics",
+  "Google Analytics",
+  "Product Positioning",
+  "Pricing Strategy",
 ];
 
 const tools = [
-  "Google Ads", "Meta Ads Manager", "ChatGPT", "Canva", "Semrush",
-  "Ahrefs", "Mailchimp", "HubSpot", "LinkedIn Ads", "YouTube Ads",
-  "Google Analytics", "Google Tag Manager", "Hootsuite", "Notion",
+  { name: "ChatGPT", logo: chatgpt },
+  { name: "Meta Ads", logo: meta },
+  { name: "Google Analytics", logo: analytics },
+  { name: "Ahrefs", logo: ahrefs },
+  { name: "Canva", logo: canva },
+  { name: "Notion", logo: notion },
+  { name: "Semrush", logo: semrush },
+  { name: "Google Tag Manager", logo: tagManager },
+  { name: "YouTube Ads", logo: youtube },
+  { name: "HubSpot", logo: hubspot },
+  { name: "LinkedIn Ads", logo: linkedin },
+  { name: "Hootsuite", logo: hootsuite },
+  { name: "Mailchimp", logo: mailchimp },
 ];
 
 const careerServices = [
-  { icon: Users, title: "Career Sessions", description: "5+ career-oriented sessions by industry mentors" },
-  { icon: Award, title: "Profile Building", description: "Craft a standout resume and LinkedIn profile" },
-  { icon: Megaphone, title: "Mock Interviews", description: "Prepare with most asked interview questions" },
-  { icon: Lightbulb, title: "1:1 Mentoring", description: "Get guidance at every step of your transition" },
+  {
+    icon: Users,
+    title: "Career Sessions",
+    description: "5+ career-oriented sessions by industry mentors",
+  },
+  {
+    icon: Award,
+    title: "Profile Building",
+    description: "Craft a standout resume and LinkedIn profile",
+  },
+  {
+    icon: Megaphone,
+    title: "Mock Interviews",
+    description: "Prepare with most asked interview questions",
+  },
+  {
+    icon: Lightbulb,
+    title: "1:1 Mentoring",
+    description: "Get guidance at every step of your transition",
+  },
 ];
 
 export default function Learning() {
@@ -151,11 +201,12 @@ export default function Learning() {
                 🎓 Executive Post Graduate Certification
               </span>
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-                AI-Driven <span className="text-primary">Digital Marketing</span> Bootcamp
+                AI-Driven{" "}
+                <span className="text-primary">Digital Marketing</span> Bootcamp
               </h1>
               <p className="text-lg text-muted-foreground mb-6">
-                Gain the most relevant skills in digital marketing and make a successful 
-                career transition with guaranteed paid internships.
+                Gain the most relevant skills in digital marketing and make a
+                successful career transition with guaranteed paid internships.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-8">
@@ -221,8 +272,12 @@ export default function Learning() {
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 className="text-center py-4"
               >
-                <p className="text-2xl md:text-3xl font-bold text-primary mb-1">{item.value}</p>
-                <p className="text-xs md:text-sm text-secondary-foreground/70">{item.label}</p>
+                <p className="text-2xl md:text-3xl font-bold text-primary mb-1">
+                  {item.value}
+                </p>
+                <p className="text-xs md:text-sm text-secondary-foreground/70">
+                  {item.label}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -260,8 +315,12 @@ export default function Learning() {
                         <module.icon className="h-7 w-7 text-primary" />
                       </div>
                       <div>
-                        <span className="text-sm font-medium text-primary">{module.week}</span>
-                        <h3 className="text-lg font-bold text-foreground">{module.title}</h3>
+                        <span className="text-sm font-medium text-primary">
+                          {module.week}
+                        </span>
+                        <h3 className="text-lg font-bold text-foreground">
+                          {module.title}
+                        </h3>
                       </div>
                     </div>
 
@@ -269,7 +328,10 @@ export default function Learning() {
                     <div className="md:col-span-2">
                       <ul className="space-y-2">
                         {module.topics.map((topic) => (
-                          <li key={topic} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <li
+                            key={topic}
+                            className="flex items-start gap-2 text-sm text-muted-foreground"
+                          >
                             <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                             <span>{topic}</span>
                           </li>
@@ -279,8 +341,12 @@ export default function Learning() {
 
                     {/* Outcome */}
                     <div className="bg-accent/50 rounded-lg p-4">
-                      <p className="text-xs text-primary font-medium mb-1">🎯 Outcome</p>
-                      <p className="text-sm text-foreground">{module.outcome}</p>
+                      <p className="text-xs text-primary font-medium mb-1">
+                        🎯 Outcome
+                      </p>
+                      <p className="text-sm text-foreground">
+                        {module.outcome}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -291,55 +357,91 @@ export default function Learning() {
       </section>
 
       {/* Skills & Tools */}
+      {/* Skills & Tools */}
       <section className="py-24 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Skills */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
-                <TrendingUp className="h-7 w-7 text-primary" />
-                Skills to Master
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                {skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-4 py-2 bg-card rounded-full text-sm border border-border/50 hover:border-primary/30 hover:bg-accent transition-colors"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
+        <div className="container mx-auto px-4 space-y-16">
+          {/* ================= SKILLS ================= */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
+              <TrendingUp className="h-7 w-7 text-primary" />
+              Skills to Master
+            </h3>
 
-            {/* Tools */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
-                <Palette className="h-7 w-7 text-primary" />
-                Tools to Master
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                {tools.map((tool) => (
-                  <span
-                    key={tool}
-                    className="px-4 py-2 bg-primary/10 rounded-full text-sm text-primary font-medium hover:bg-primary hover:text-primary-foreground transition-colors"
-                  >
-                    {tool}
+            <div className="flex flex-wrap gap-3">
+              {skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="
+              px-4 py-2
+              bg-card
+              rounded-full
+              text-sm
+              border border-border/50
+              hover:border-primary/30
+              hover:bg-accent
+              transition-colors
+            "
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* ================= TOOLS ================= */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <h3 className="text-2xl font-bold text-foreground mb-8 flex items-center gap-3">
+              {/* Better semantic icon */}
+              <Code className="h-7 w-7 text-primary" />
+              Tools to Master
+            </h3>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+              {tools.map((tool) => (
+                <div
+                  key={tool.name}
+                  className="
+              group
+              bg-card
+              border border-border/50
+              rounded-2xl
+              p-6
+              flex flex-col items-center justify-center
+              hover:shadow-xl
+              hover:-translate-y-1
+              transition-all duration-300
+            "
+                >
+                  <img
+                    src={tool.logo}
+                    alt={tool.name}
+                    className="
+                h-14
+                object-contain
+                mb-3
+                grayscale
+                group-hover:grayscale-0
+                transition
+              "
+                  />
+
+                  <span className="text-sm font-semibold text-foreground text-center">
+                    {tool.name}
                   </span>
-                ))}
-              </div>
-            </motion.div>
-          </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -369,8 +471,12 @@ export default function Learning() {
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <service.icon className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{service.title}</h3>
-                <p className="text-sm text-muted-foreground">{service.description}</p>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {service.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -424,11 +530,13 @@ export default function Learning() {
               transition={{ duration: 0.5 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground mb-6">
-                Start Your <span className="text-primary">Transformation</span> Today
+                Start Your <span className="text-primary">Transformation</span>{" "}
+                Today
               </h2>
               <p className="text-secondary-foreground/80 text-lg mb-8">
-                Join the next batch and become a certified digital marketing professional
-                with hands-on experience and guaranteed placement assistance.
+                Join the next batch and become a certified digital marketing
+                professional with hands-on experience and guaranteed placement
+                assistance.
               </p>
               <Button variant="hero" size="lg">
                 <Download className="mr-2 h-5 w-5" /> Download Full Curriculum
