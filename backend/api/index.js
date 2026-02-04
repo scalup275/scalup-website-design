@@ -3,9 +3,10 @@ import "../config/env.js"; // MUST be first import
 import express from "express";
 import cors from "cors";
 import { sendEmail } from "../utils/mailer.js";
-
+import blogRoutes from "./blogs/blog.routes.js";
+import connectDB from "../config/db.js";
 const app = express();
-
+await connectDB();
 app.use(cors());
 app.use(express.json());
 
@@ -42,6 +43,8 @@ app.post("/api/contact", async (req, res) => {
     res.status(500).json({ error: "Email failed ❌" });
   }
 });
+
+app.use("/api/blogs", blogRoutes);
 
 const PORT = process.env.PORT || 3000;
 
