@@ -300,13 +300,14 @@ export default function About() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-card rounded-2xl overflow-hidden border border-border/50 group hover:shadow-lg transition-shadow"
               >
-                <div className="aspect-square overflow-hidden">
+                <div className="aspect-[3/4] overflow-hidden">
                   <img
                     src={member.image}
                     alt={member.role}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
+
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-foreground mb-1">
                     {member.role}
