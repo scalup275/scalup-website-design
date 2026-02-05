@@ -11,7 +11,7 @@ import { useLocation } from "react-router-dom";
 
 export function LeadPopup() {
   const [open, setOpen] = useState(false);
-
+  const location = useLocation();
   useEffect(() => {
     // Allowed routes
     const allowedRoutes = ["/", "/agency"];
