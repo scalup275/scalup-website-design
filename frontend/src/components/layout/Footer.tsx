@@ -11,8 +11,8 @@ import logo from "@/assets/logo.jpeg";
 
 const quickLinks = [
   { name: "Learning", href: "/" },
+   { name: "Agency", href: "/agency" },
   { name: "About", href: "/about" },
-  { name: "Agency", href: "/agency" },
   { name: "Blogs", href: "/blog" },
   { name: "FAQs", href: "/faqs" },
   { name: "Work with us", href: "/careers" },
