@@ -7,17 +7,23 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { LeadForm } from "@/components/LeadForm";
+import { useLocation } from "react-router-dom";
 
 export function LeadPopup() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
+    // Allowed routes
+    const allowedRoutes = ["/", "/agency"];
+
+    if (!allowedRoutes.includes(location.pathname)) return;
+
     const timer = setTimeout(() => {
       setOpen(true);
-    }, 1000); // 10 seconds
+    }, 5000); // 5 seconds
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [location.pathname]);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
