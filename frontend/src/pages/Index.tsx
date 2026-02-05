@@ -204,34 +204,43 @@ export default function Index() {
                 <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 via-transparent to-transparent" />
 
                 {/* Floating Stats Card */}
+                {/* Floating Stats Card */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
-                  className="absolute bottom-6 left-6 right-6 bg-background/95 backdrop-blur-sm rounded-xl p-4 shadow-lg"
+                  className="absolute bottom-0 left-0 right-0 sm:bottom-6 sm:left-6 sm:right-6 bg-background/95 backdrop-blur-sm rounded-none sm:rounded-xl p-0 sm:p-4 shadow-lg m-0"
                 >
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-sm text-muted-foreground">
+                  <div className="flex items-center justify-between p-3 sm:p-0 sm:flex-row">
+                    <div className="flex-1 text-center sm:text-left">
+                      <p className="text-xs sm:text-sm text-muted-foreground">
                         Program Duration
                       </p>
-                      <p className="text-xl font-bold text-foreground">
+                      <p className="text-base sm:text-xl font-bold whitespace-nowrap">
                         12 Weeks
                       </p>
                     </div>
-                    <div className="w-px h-10 bg-border" />
-                    <div>
-                      <p className="text-sm text-muted-foreground">Format</p>
-                      <p className="text-xl font-bold text-foreground">
+
+                    <div className="hidden sm:block w-px h-10 bg-border" />
+
+                    <div className="flex-1 text-center sm:text-left">
+                      <p className="text-xs sm:text-sm text-muted-foreground">
+                        Format
+                      </p>
+                      <p className="text-base sm:text-xl font-bold whitespace-nowrap">
                         Live + Projects
                       </p>
                     </div>
-                    <div className="w-px h-10 bg-border" />
-                    <div>
-                      <p className="text-sm text-muted-foreground">
+
+                    <div className="hidden sm:block w-px h-10 bg-border" />
+
+                    <div className="flex-1 text-center sm:text-left">
+                      <p className="text-xs sm:text-sm text-muted-foreground">
                         Internship
                       </p>
-                      <p className="text-xl font-bold text-primary">Paid ✓</p>
+                      <p className="text-base sm:text-xl font-bold text-primary whitespace-nowrap">
+                        Paid ✓
+                      </p>
                     </div>
                   </div>
                 </motion.div>
