@@ -48,10 +48,10 @@ app.use("/api/blogs", blogRoutes);
 
 const PORT = process.env.PORT || 3000;
 
-if (!process.env.VERCEL) {
+
   app.listen(PORT, () => {
     console.log(`Server running locally on http://localhost:${PORT}`);
   });
-}
+
 
 export default app;
