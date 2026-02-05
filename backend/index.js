@@ -1,10 +1,10 @@
-import "../config/env.js"; // MUST be first import
+import "./config/env.js"; // MUST be first import
 
 import express from "express";
 import cors from "cors";
-import { sendEmail } from "../utils/mailer.js";
-import blogRoutes from "./blogs/blog.routes.js";
-import connectDB from "../config/db.js";
+import { sendEmail } from "./utils/mailer.js";
+import blogRoutes from "./api/blogs/blog.routes.js";
+import connectDB from "./config/db.js";
 const app = express();
 await connectDB();
 app.use(cors());
