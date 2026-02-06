@@ -7,7 +7,14 @@ import blogRoutes from "./api/blogs/blog.routes.js";
 import connectDB from "./config/db.js";
 const app = express();
 await connectDB();
-app.use(cors());
+const allowedOrigins = ['http://localhost:3000', 'https://www.scalup.org'];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true,
+  methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
+  allowedHeaders: ['Content-Type', 'Authorization'] 
+}));
 app.use(express.json());
 
 app.post("/api/contact", async (req, res) => {
