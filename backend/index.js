@@ -10,7 +10,7 @@ await connectDB();
 const allowedOrigins = [
   "http://localhost:3000",
   "https://www.scalup.org",
-  "https://scalup.org"
+  "https://scalup.org",
 ];
 app.use(
   cors({
@@ -24,17 +24,22 @@ app.use(
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
-  })
+  }),
 );
 
 app.options("*", cors());
+
+// Body parsing middleware
+// Enables reading JSON and URL-encoded data from req.body
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.post("/api/contact", async (req, res) => {
   try {
     const { name, email, phone, message, classPreference, source } = req.body;
 
     // Required for all leads
-    if (!name || !email || !phone || !source) {
+    if (!name || !email || !phone) {
       return res.status(400).json({
         error: "Missing required fields",
       });
@@ -67,10 +72,8 @@ app.use("/api/blogs", blogRoutes);
 
 const PORT = process.env.PORT || 3000;
 
-
-  app.listen(PORT, () => {
-    console.log(`Server running locally on http://localhost:${PORT}`);
-  });
-
+app.listen(PORT, () => {
+  console.log(`Server running locally on http://localhost:${PORT}`);
+});
 
 export default app;
