@@ -34,6 +34,14 @@ app.options("*", cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+//health check route
+app.get("/", async (req, res) => {
+  res.json({
+    status: "OK",
+    service: "Scalup Backend",
+    message: "Server is running",
+  });
+});
 app.post("/api/contact", async (req, res) => {
   try {
     const { name, email, phone, message, classPreference, source } = req.body;
