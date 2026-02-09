@@ -4,44 +4,60 @@ import express from "express";
 import cors from "cors";
 import { sendEmail } from "./utils/mailer.js";
 import blogRoutes from "./api/blogs/blog.routes.js";
-import connectDB from "./config/db.js";
+import mongoose from "mongoose";
+
 const app = express();
-await connectDB();
+
 const allowedOrigins = [
   "http://localhost:3000",
   "https://www.scalup.org",
   "https://scalup.org",
 ];
+
+// Global middleware
 app.use(
   cors({
-    origin: (origin, callback) => {
-      if (!origin) return callback(null, true);
-      if (allowedOrigins.includes(origin)) {
-        callback(null, true);
+    origin: function (origin, callback) {
+      if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+        callback(null, true); // Allow the request
+      } else {
+        callback(new Error("Not allowed by CORS")); // Deny the request
       }
-      callback(new Error("Not allowed by CORS"));
     },
-    credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
   }),
 );
 
-app.options("*", cors());
-
-// Body parsing middleware
-// Enables reading JSON and URL-encoded data from req.body
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//health check route
-app.get("/", async (req, res) => {
+// Connect MongoDB
+console.log("MONGODB_URI loaded:", !!process.env.MONGODB_URI);
+
+export const connectMongo = async () => {
+  try {
+    const conn = await mongoose.connect(process.env.MONGO_URI);
+    const isConnected = conn.connections[0].readyState === 1;
+    console.log("MongoDB connected:", isConnected);
+  } catch (error) {
+    console.log("MongoDB is down", error);
+    process.exit(1);
+  }
+};
+
+connectMongo();
+
+// Health check route
+app.get("/", (req, res) => {
   res.json({
     status: "OK",
     service: "Scalup Backend",
     message: "Server is running",
   });
 });
+
+// Contact form route
 app.post("/api/contact", async (req, res) => {
   try {
     const { name, email, phone, message, classPreference, source } = req.body;
@@ -76,12 +92,13 @@ app.post("/api/contact", async (req, res) => {
   }
 });
 
+// Blog routes
 app.use("/api/blogs", blogRoutes);
 
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`Server running locally on http://localhost:${PORT}`);
+  console.log(`GlobeBot server running on port ${PORT}`);
 });
 
 export default app;
