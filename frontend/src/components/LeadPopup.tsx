@@ -20,7 +20,7 @@ export function LeadPopup() {
 
     const timer = setTimeout(() => {
       setOpen(true);
-    }, 5000); // 5 seconds
+    }, 5000); //5 seconds
 
     return () => clearTimeout(timer);
   }, [location.pathname]);
