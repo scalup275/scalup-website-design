@@ -70,11 +70,6 @@ app.post("/api/contact", async (req, res) => {
     }
 
     // Only required for demo / popup
-    if (source !== "consultation" && !classPreference) {
-      return res.status(400).json({
-        error: "Class preference is required",
-      });
-    }
 
     await sendEmail({
       name,
