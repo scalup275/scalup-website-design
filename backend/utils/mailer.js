@@ -19,7 +19,7 @@ export async function sendEmail({
   const toEmail = process.env.MAIL_TO?.trim();
   if (!toEmail) throw new Error("MAIL_TO missing");
 
-  //  make optional fields safe
+  //  make optional fields safe commit changes
   const safeSource = source ? source.toUpperCase() : "WEBSITE";
   const safeMessage = message || "No message provided";
   const safeClass = classPreference || "Not specified";
