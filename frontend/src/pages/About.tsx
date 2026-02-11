@@ -16,7 +16,7 @@ import { Layout } from "@/components/layout/Layout";
 import { SectionHeading } from "@/components/SectionHeading";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import founder from "@/assets/founder.png";
-import cto from "@/assets/cto.png";
+import cto from "@/assets/cto.jpeg";
 import aboutHero from "@/assets/about-hero.jpg";
 import successStudents from "@/assets/success-students.jpg";
 
