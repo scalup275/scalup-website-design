@@ -63,11 +63,12 @@ const team = [
     linkedin: "https://linkedin.com/in/jubairbhat/",
   },
   {
-    name: "CTO",
+    name: "Shoiab Ganai",
     role: "Chief Technology Officer",
     image: cto,
     bio: "Leading our technology initiatives and ensuring our learning platform delivers the best experience. Our CTO brings years of expertise in building scalable educational technology solutions.",
-    linkedin: "https://linkedin.com/",
+    linkedin:
+      "https://www.linkedin.com/in/shoiab-ahmad-ganai/?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
   },
 ];
 
