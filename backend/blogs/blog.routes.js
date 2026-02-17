@@ -14,6 +14,6 @@ router.get("/", getAllBlogs);
 router.get("/:slug", getBlogBySlug);
 router.put("/:id", updateBlog);
 router.delete("/:id", deleteBlog);
-router.patch("/:id/toggle-publish", protectAdmin, togglePublish);
+router.patch("/:id/toggle-publish", togglePublish);
 
 export default router;
