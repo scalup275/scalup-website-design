@@ -21,7 +21,7 @@ const adminSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-// hash password before save
+// hash password before savewew
 adminSchema.pre("save", async function (next) {
   if (!this.isModified("password")) return next();
 
