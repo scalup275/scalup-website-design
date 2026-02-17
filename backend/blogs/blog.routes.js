@@ -5,6 +5,7 @@ import {
   getBlogBySlug,
   updateBlog,
   deleteBlog,
+  togglePublish,
 } from "./blog.controller.js";
 
 const router = express.Router();
