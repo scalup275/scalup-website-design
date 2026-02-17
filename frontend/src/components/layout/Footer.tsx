@@ -11,8 +11,8 @@ import logo from "@/assets/logo.jpeg";
 
 const quickLinks = [
   { name: "Learning", href: "/" },
+   { name: "Agency", href: "/agency" },
   { name: "About", href: "/about" },
-  { name: "Agency", href: "/agency" },
   { name: "Blogs", href: "/blog" },
   { name: "FAQs", href: "/faqs" },
   { name: "Work with us", href: "/careers" },
@@ -170,16 +170,6 @@ export function Footer() {
             © {new Date().getFullYear()} SCALUP Digital Marketing School. All
             rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <a
-              href="https://scalup.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-secondary-foreground/60 hover:text-primary transition-colors text-sm flex items-center gap-1"
-            >
-              scalup.org <ExternalLink className="h-3 w-3" />
-            </a>
-          </div>
         </div>
       </div>
     </footer>

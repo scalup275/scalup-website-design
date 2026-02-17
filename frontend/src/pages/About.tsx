@@ -16,7 +16,7 @@ import { Layout } from "@/components/layout/Layout";
 import { SectionHeading } from "@/components/SectionHeading";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import founder from "@/assets/founder.png";
-import cto from "@/assets/cto.png";
+import cto from "@/assets/cto.jpeg";
 import aboutHero from "@/assets/about-hero.jpg";
 import successStudents from "@/assets/success-students.jpg";
 
@@ -63,11 +63,12 @@ const team = [
     linkedin: "https://linkedin.com/in/jubairbhat/",
   },
   {
-    name: "Shoiab Ahmad",
+    name: "Shoiab Ganai",
     role: "Chief Technology Officer",
     image: cto,
     bio: "Leading our technology initiatives and ensuring our learning platform delivers the best experience. Our CTO brings years of expertise in building scalable educational technology solutions.",
-    linkedin: "https://linkedin.com/in/shoiab-ahmad-ganai",
+    linkedin:
+      "https://www.linkedin.com/in/shoiab-ahmad-ganai/?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
   },
 ];
 
@@ -300,13 +301,14 @@ export default function About() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-card rounded-2xl overflow-hidden border border-border/50 group hover:shadow-lg transition-shadow"
               >
-                <div className="aspect-square overflow-hidden">
+                <div className="aspect-[3/4] overflow-hidden">
                   <img
                     src={member.image}
                     alt={member.role}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
+
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-foreground mb-1">
                     {member.role}

@@ -12,7 +12,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { sendLead } from "@/lib/bot";
-export type LeadSource = "consultation" | "demo" | "popup";
+
+export type LeadSource = "consultation" | "demo" | "popup" | "agency";
 
 interface LeadFormProps {
   title?: string;
@@ -37,7 +38,7 @@ export function LeadForm({
     email: "",
     phone: "",
     message: "",
-    classPreference: "online", // default
+    classPreference: "online",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -87,6 +88,7 @@ export function LeadForm({
       )}
 
       <form onSubmit={handleSubmit} className="space-y-4">
+        {/* Name */}
         <Input
           placeholder="Your Name"
           value={formData.name}
@@ -94,6 +96,7 @@ export function LeadForm({
           required
         />
 
+        {/* Email */}
         <Input
           type="email"
           placeholder="Email Address"
@@ -102,6 +105,7 @@ export function LeadForm({
           required
         />
 
+        {/* Phone */}
         <Input
           type="tel"
           placeholder="Phone Number"
@@ -109,8 +113,9 @@ export function LeadForm({
           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
           required
         />
-        {/* Class Preference (ONLY for Demo / Popup) */}
-        {source !== "consultation" && (
+
+        {/* Class Preference → ONLY for demo & popup */}
+        {(source === "demo" || source === "popup") && (
           <div className="space-y-2">
             <label className="text-sm font-medium text-foreground">
               Class Preference <span className="text-red-500">*</span>
@@ -138,7 +143,20 @@ export function LeadForm({
           </div>
         )}
 
-        {showMessage && (
+        {/* Agency → Business Website instead of message */}
+        {source === "agency" && (
+          <Input
+            type="text"
+            placeholder="Business Website (optional)"
+            value={formData.message}
+            onChange={(e) =>
+              setFormData({ ...formData, message: e.target.value })
+            }
+          />
+        )}
+
+        {/* Normal message textarea for non-agency */}
+        {showMessage && source !== "agency" && (
           <Textarea
             placeholder="Your Message"
             value={formData.message}
@@ -148,6 +166,7 @@ export function LeadForm({
           />
         )}
 
+        {/* Submit */}
         <Button
           type="submit"
           variant="hero"
