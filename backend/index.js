@@ -3,13 +3,16 @@ import "./config/env.js"; // MUST be first import
 import express from "express";
 import cors from "cors";
 import { sendEmail } from "./utils/mailer.js";
-import blogRoutes from "./api/blogs/blog.routes.js";
+import blogRoutes from "./blogs/blog.routes.js";
 import mongoose from "mongoose";
-
+import cookieParser from "cookie-parser";
+import adminRoutes from "./auth/admin.routes.js";
 const app = express();
 
 const allowedOrigins = [
   "http://localhost:3000",
+  "http://localhost:8080",
+  "http://localhost:8081",
   "https://www.scalup.org",
   "https://scalup.org",
 ];
@@ -31,7 +34,7 @@ app.use(
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(cookieParser());
 // Connect MongoDB
 console.log("MONGODB_URI loaded:", !!process.env.MONGODB_URI);
 
@@ -40,6 +43,7 @@ export const connectMongo = async () => {
     const conn = await mongoose.connect(process.env.MONGO_URI);
     const isConnected = conn.connections[0].readyState === 1;
     console.log("MongoDB connected:", isConnected);
+    console.log("Connected DB:", conn.connection.name);
   } catch (error) {
     console.log("MongoDB is down", error);
     process.exit(1);
@@ -89,6 +93,9 @@ app.post("/api/contact", async (req, res) => {
 
 // Blog routes
 app.use("/api/blogs", blogRoutes);
+
+//auth routes
+app.use("/api/admin", adminRoutes);
 
 const PORT = process.env.PORT || 3000;
 

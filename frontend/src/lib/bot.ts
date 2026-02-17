@@ -17,3 +17,26 @@ export async function sendLead(payload: any) {
 
   return res.json();
 }
+
+//===>blogs===>//
+
+export async function getAllBlogs() {
+  const res = await fetch(`${API_BASE_URL}/api/blogs`);
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch blogs");
+  }
+
+  return res.json();
+}
+
+///===>get by slugs==>
+export async function getBlogBySlug(slug: string) {
+  const res = await fetch(`${API_BASE_URL}/api/blogs/${slug}`);
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch blog");
+  }
+
+  return res.json();
+}

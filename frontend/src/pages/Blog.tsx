@@ -1,70 +1,36 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Calendar, User, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-const blogs = [
-  {
-    category: "SEO",
-    readTime: "5 min read",
-    title: "10 SEO Trends That Will Dominate in 2026",
-    excerpt:
-      "Stay ahead of the curve with these emerging SEO strategies that every digital marketer should know about.",
-    author: "SCAL UP Team",
-    date: "January 10, 2026",
-  },
-  {
-    category: "Paid Ads",
-    readTime: "8 min read",
-    title: "The Complete Guide to Meta Ads for Beginners",
-    excerpt:
-      "Learn how to create effective Facebook and Instagram ads that convert, from audience targeting to creatives.",
-    author: "SCAL UP Team",
-    date: "January 8, 2026",
-  },
-  {
-    category: "Content",
-    readTime: "6 min read",
-    title: "Content Marketing Strategies That Actually Work",
-    excerpt:
-      "Discover proven content marketing tactics that help build brand awareness and drive organic traffic.",
-    author: "SCAL UP Team",
-    date: "January 5, 2026",
-  },
-  {
-    category: "Career",
-    readTime: "7 min read",
-    title: "How to Build a Successful Career in Digital Marketing",
-    excerpt:
-      "A comprehensive roadmap for students and professionals looking to break into the digital marketing industry.",
-    author: "SCAL UP Team",
-    date: "January 3, 2026",
-  },
-  {
-    category: "Analytics",
-    readTime: "10 min read",
-    title: "Google Analytics 4: Everything You Need to Know",
-    excerpt:
-      "Master GA4 with this complete guide covering setup, configuration, and advanced tracking features.",
-    author: "SCAL UP Team",
-    date: "January 1, 2026",
-  },
-  {
-    category: "SEO",
-    readTime: "6 min read",
-    title: "Local SEO: Dominating Your Geographic Market",
-    excerpt:
-      "Learn how to optimize your business for local search and attract customers in your area.",
-    author: "SCAL UP Team",
-    date: "December 28, 2025",
-  },
-];
+import { getAllBlogs } from "@/lib/bot";
+
+interface Blog {
+  _id: string;
+  title: string;
+  excerpt: string;
+  slug: string;
+  createdAt: string;
+}
 
 export default function BlogPage() {
+  const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getAllBlogs()
+      .then(setBlogs)
+      .catch(console.error)
+      .finally(() => setLoading(false));
+  }, []);
+
   return (
     <div>
       <Header />
+
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6">
           {/* Header */}
@@ -88,67 +54,70 @@ export default function BlogPage() {
             </p>
           </motion.div>
 
+          {/* Loading */}
+          {loading && (
+            <p className="text-center text-gray-500">Loading blogs...</p>
+          )}
+
           {/* Blog Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogs.map((blog, index) => (
-              <motion.article
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -8 }}
-                className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden"
-              >
-                {/* Image Placeholder */}
-                <div className="h-44 bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center">
-                  <div className="w-14 h-14 bg-white rounded-xl shadow flex items-center justify-center text-orange-500">
-                    ✍️
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6">
-                  {/* Meta */}
-                  <div className="flex items-center gap-3 text-xs mb-3">
-                    <span className="bg-orange-100 text-orange-600 px-2 py-0.5 rounded-full font-medium">
-                      {blog.category}
-                    </span>
-                    <span className="text-gray-400">{blog.readTime}</span>
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="font-bold text-lg leading-snug mb-2">
-                    {blog.title}
-                  </h3>
-
-                  {/* Excerpt */}
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                    {blog.excerpt}
-                  </p>
-
-                  {/* Footer */}
-                  <div className="flex items-center justify-between text-xs text-gray-400">
-                    <div className="flex items-center gap-2">
-                      <User className="w-3.5 h-3.5" />
-                      {blog.author}
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Calendar className="w-3.5 h-3.5" />
-                      {blog.date}
+          {!loading && (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {blogs.map((blog, index) => (
+                <motion.article
+                  key={blog._id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -8 }}
+                  className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden"
+                >
+                  {/* Image Placeholder */}
+                  <div className="h-44 bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center">
+                    <div className="w-14 h-14 bg-white rounded-xl shadow flex items-center justify-center text-orange-500">
+                      ✍️
                     </div>
                   </div>
 
-                  {/* CTA */}
-                  <button className="mt-5 flex items-center gap-2 text-orange-500 font-medium text-sm hover:gap-3 transition-all">
-                    Read More <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </motion.article>
-            ))}
-          </div>
+                  {/* Content */}
+                  <div className="p-6">
+                    {/* Title */}
+                    <h3 className="font-bold text-lg leading-snug mb-2">
+                      {blog.title}
+                    </h3>
+
+                    {/* Excerpt */}
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                      {blog.excerpt}
+                    </p>
+
+                    {/* Footer */}
+                    <div className="flex items-center justify-between text-xs text-gray-400">
+                      <div className="flex items-center gap-2">
+                        <User className="w-3.5 h-3.5" />
+                        SCAL UP Team
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Calendar className="w-3.5 h-3.5" />
+                        {new Date(blog.createdAt).toLocaleDateString()}
+                      </div>
+                    </div>
+
+                    {/* CTA */}
+                    <Link
+                      to={`/blogs/${blog.slug}`}
+                      className="mt-5 inline-flex items-center gap-2 text-orange-500 font-medium text-sm hover:gap-3 transition-all"
+                    >
+                      Read More <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+          )}
         </div>
       </section>
+
       <Footer />
     </div>
   );
