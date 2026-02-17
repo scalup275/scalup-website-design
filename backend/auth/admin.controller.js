@@ -69,3 +69,24 @@ export const logoutAdmin = async (req, res) => {
     })
     .json({ message: "Logged out successfully" });
 };
+
+//upadte pass
+export const updatePassword = async (req, res) => {
+  try {
+    const { currentPassword, newPassword } = req.body;
+
+    const admin = await Admin.findById(req.admin.id);
+
+    const isMatch = await admin.comparePassword(currentPassword);
+    if (!isMatch) {
+      return res.status(401).json({ message: "Invalid credentials" });
+    }
+
+    admin.password = newPassword;
+    await admin.save();
+
+    res.json({ message: "Password updated successfully" });
+  } catch (err) {
+    res.status(500).json({ message: "Server error" });
+  }
+};

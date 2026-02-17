@@ -32,3 +32,13 @@ export const deleteBlog = async (req, res) => {
   await Blog.findByIdAndDelete(req.params.id);
   res.json({ success: true });
 };
+/** TOGGLE PUBLISH */
+export const togglePublish = async (req, res) => {
+  const blog = await Blog.findById(req.params.id);
+  if (!blog) return res.status(404).json({ error: "Blog not found" });
+
+  blog.isPublished = !blog.isPublished;
+  await blog.save();
+
+  res.json({ success: true, isPublished: blog.isPublished });
+};
