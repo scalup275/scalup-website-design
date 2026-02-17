@@ -15,6 +15,7 @@ const allowedOrigins = [
   "http://localhost:8081",
   "https://www.scalup.org",
   "https://scalup.org",
+  "https://scalupblogsadmin.vercel.app",
 ];
 
 // Global middleware
