@@ -186,7 +186,7 @@ export default function About() {
               />
               <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground rounded-xl p-6 shadow-lg">
                 <p className="text-3xl font-bold">55%</p>
-                <p className="text-sm">Avg. Salary Hike</p>
+                <p className="text-sm">Avg. Salary Hike </p>
               </div>
             </motion.div>
           </div>
