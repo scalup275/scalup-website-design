@@ -165,7 +165,15 @@ export default function Contact() {
               className="space-y-6"
             >
               <div className="rounded-2xl overflow-hidden border border-border/50 shadow-lg h-[400px]">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.336190569378!2d74.7911854!3d34.0352463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e18f7a6854bee1%3A0x75288af525450fd!2sScalup!5e0!3m2!1sen!2sin!4v1772469140087!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+               <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.336190569378!2d74.7911854!3d34.0352463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e18f7a6854bee1%3A0x75288af525450fd!2sScalup!5e0!3m2!1sen!2sin!4v1772469140087!5m2!1sen!2sin"
+  width="100%"
+  height="100%"
+  style={{ border: 0 }}
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+/>
               </div>
 
               {/* Social Links */}
