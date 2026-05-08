@@ -34,7 +34,7 @@ const socialLinks = [
   },
   {
     name: "Instagram (Agency)",
-    href: "https://instagram.com/scalup.agency",
+    href: "https://www.instagram.com/agency.scalup?igsh=MWkxM3J4eHJlbzEyaw%3D%3D&utm_source=qr",
     icon: Instagram,
   },
   {
