@@ -32,10 +32,9 @@ app.use(
     credentials: true,
   }),
 );
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(express.json({ limit: "10mb" }));
+app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 // Connect MongoDB
 console.log("MONGODB_URI loaded:", !!process.env.MONGODB_URI);
 
@@ -101,7 +100,7 @@ app.use("/api/admin", adminRoutes);
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`GlobeBot server running on port ${PORT}`);
+  console.log(`scalup ${PORT}`);
 });
 
 export default app;
