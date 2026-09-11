@@ -10,7 +10,6 @@ import adminRoutes from "./auth/admin.routes.js";
 const app = express();
 
 const allowedOrigins = [
-  "http://localhost:3000",
   "http://localhost:8080",
   "http://localhost:8081",
   "https://www.scalup.org",
@@ -40,7 +39,7 @@ console.log("MONGODB_URI loaded:", !!process.env.MONGODB_URI);
 
 export const connectMongo = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URI);
+    const conn = await mongoose.connect(process.env.MONGODB_URI);
     const isConnected = conn.connections[0].readyState === 1;
     console.log("MongoDB connected:", isConnected);
     console.log("Connected DB:", conn.connection.name);
@@ -97,7 +96,7 @@ app.use("/api/blogs", blogRoutes);
 //auth routes
 app.use("/api/admin", adminRoutes);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
   console.log(`scalup ${PORT}`);
