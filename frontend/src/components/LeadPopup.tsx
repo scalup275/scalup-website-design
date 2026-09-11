@@ -3,6 +3,7 @@ import { Sparkles } from "lucide-react";
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
@@ -41,6 +42,9 @@ export function LeadPopup() {
               </>
             )}
           </DialogTitle>
+          <DialogDescription className="sr-only">
+            Submit your details to book a free consultation or demo class.
+          </DialogDescription>
         </DialogHeader>
 
         <LeadForm
