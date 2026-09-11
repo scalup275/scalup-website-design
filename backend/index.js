@@ -44,8 +44,7 @@ export const connectMongo = async () => {
     console.log("MongoDB connected:", isConnected);
     console.log("Connected DB:", conn.connection.name);
   } catch (error) {
-    console.log("MongoDB is down", error);
-    process.exit(1);
+    console.error("MongoDB connection failed", error);
   }
 };
 
@@ -98,8 +97,10 @@ app.use("/api/admin", adminRoutes);
 
 const PORT = process.env.PORT || 4000;
 
-app.listen(PORT, () => {
-  console.log(`scalup ${PORT}`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`scalup ${PORT}`);
+  });
+}
 
 export default app;
